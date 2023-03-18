@@ -23,7 +23,7 @@ const {
 } = await useCourse()
 
 let chapter = null
-let steps = null
+let steps = []
 try {
   chapter = await useApi.getChapter(route.params.chapter)
   steps = await useApi.getSteps(route.params.chapter)
@@ -74,7 +74,7 @@ const goStep = async (step: any) => {
     </div>
     <div class="container p-4 pt-24 md:p-32 m-auto">
       <div class="pb-8">
-        <div class="text-3xl md:text-6xl font-bold flex items-center justify-between">
+        <div v-if="chapter" class="text-3xl md:text-6xl font-bold flex items-center justify-between">
           <h1>// {{ chapter.title }}</h1>
           <div class="hidden md:flex items-center justify-between text-xl">
             <small class="mr-2">Test</small>
@@ -89,8 +89,8 @@ const goStep = async (step: any) => {
       </div>
       <div v-for="(s, i) in steps" :key="i" class="pb-8">
         <div
-            :class="isStepEnabled(steps, s) ? 'cursor-pointer' : 'cursor-not-allowed opacity-30'"
-            @click="goStep(s)"
+          :class="isStepEnabled(steps, s) ? 'cursor-pointer' : 'cursor-not-allowed opacity-30'"
+          @click="goStep(s)"
         >
           <div class="md:text-xl text-lg font-bold flex items-center">
             <span>//  {{ i + 1 }} - {{ s.title }}</span>
