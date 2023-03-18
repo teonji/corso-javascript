@@ -14,6 +14,7 @@ module.exports = {
     'plugin:vue/vue3-recommended',
   ],
   plugins: [],
-  // add your custom rules here
-  rules: {}
+  rules: {
+    'comma-dangle': 'off'
+  }
 }

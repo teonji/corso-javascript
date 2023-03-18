@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const props = defineProps({
-  error: Object,
+  error: {
+    type: Object,
+    required: true
+  },
 })
 
 // TODO

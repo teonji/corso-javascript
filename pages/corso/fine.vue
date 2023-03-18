@@ -4,7 +4,7 @@
       <h1 class="text-6xl h-[10vh] pt-4">
         FINE
       </h1>
-<!--      <div class="h-[90vh] md:h-[70vh]">
+      <!--      <div class="h-[90vh] md:h-[70vh]">
         <ace-editor
           ref="code"
           :value="innerValue"
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-/*import learntMixin from '../../mixins/learnt'
+/* import learntMixin from '../../mixins/learnt'
 import { getChapters, getLearntCode, getLearnt } from '../../utils'
 export default {
   name: 'CorsoEndPage',
@@ -37,9 +37,6 @@ export default {
   data () {
     return {
       innerValue: `
-
-
-
 
        _________        .---"""      """---.
 :______.-':      :  .---------------.  :
@@ -68,5 +65,5 @@ export default {
       require('brace/theme/monokai')
     }
   }
-}*/
+} */
 </script>

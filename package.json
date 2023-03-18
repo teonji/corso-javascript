@@ -5,7 +5,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . --ignore-path .eslintignore",
+    "lint:fix": "eslint . --ignore-path .eslintignore --fix"
   },
   "dependencies": {
     "md5": "^2.3.0",

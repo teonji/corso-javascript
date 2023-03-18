@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import useApi from '~/composables/api'
-  const chapters = await useApi.getChapters()
+import useApi from '~/composables/api'
+const chapters = await useApi.getChapters()
 </script>
 
 <template>
