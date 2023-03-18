@@ -1,3 +1,7 @@
+import { globSync } from 'glob'
+const routes = globSync('./content/**/*.md')
+  .map(path => `/corso${path.slice(7, -3)}`)
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -5,6 +9,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
   ],
+  nitro: {
+    prerender: {
+      routes
+    }
+  },
   content: {
     highlight: {
       theme: 'monokai'
