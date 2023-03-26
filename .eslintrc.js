@@ -15,6 +15,7 @@ module.exports = {
   ],
   plugins: [],
   rules: {
-    'comma-dangle': 'off'
+    'comma-dangle': 0,
+    'vue/multi-word-component-names': 0
   }
 }

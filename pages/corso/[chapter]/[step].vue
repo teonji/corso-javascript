@@ -90,7 +90,7 @@ const verifyCode = (data: any) => {
   content.value = data.content
 }
 
-const setLearntCode = async (path) => {
+const setLearntCode = async (path: string) => {
   const toAdd = md5(path)
   if (!learnt.value.includes(toAdd)) {
     learnt.value.push(toAdd)
@@ -134,13 +134,13 @@ const goNextStep = async () => {
 
 <template>
   <div class="font-mono text-xl w-full h-screen text-white pb-24 overflow-auto" :class="[step.test ? 'bg-[#2F3129]' : 'bg-indigo-600']">
-    <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 border-t border-gray-200 md:grid-cols-3 bg-gray-700 border-gray-600">
+    <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 border-t border-gray-200 lg:grid-cols-3 bg-gray-700 border-gray-600">
       <div class="fixed items-center justify-between space-x-2 w-full">
         <div class="w-full bg-gray-200 rounded-full h-1.5 bg-gray-800">
           <div class="h-1.5 rounded-full" :class="stepPercentage === 100 ? 'bg-green-600' : 'bg-blue-600'" :style="`width: ${stepPercentage}%`" />
         </div>
       </div>
-      <div class="px-8 items-center justify-center hidden mr-auto text-gray-300 md:flex">
+      <div class="px-8 items-center justify-center hidden mr-auto text-gray-300 lg:flex">
         <nuxt-link :to="current.slug" class="p-2.5 group rounded-full hover:bg-gray-100 mr-1 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600">
           <svg class="w-5 h-5 text-gray-300 group-hover:text-gray-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -148,23 +148,23 @@ const goNextStep = async () => {
         </nuxt-link>
         <span class="text-sm">{{ current.title }}</span>
       </div>
-      <div class="hidden md:flex items-center justify-center text-sm text-gray-300">
+      <div class="hidden lg:flex items-center justify-center text-sm text-gray-300">
         {{ step.title }}
       </div>
-      <div class="px-8 flex items-center">
+      <div class="px-4 flex items-center">
         <div class="flex items-center justify-center w-full">
-          <nuxt-link :to="current.slug" class="md:hidden mr-2 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600">
+          <nuxt-link :to="current.slug" class="lg:hidden mr-2 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600">
             <svg class="w-5 h-5 text-gray-300 group-hover:text-gray-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
             </svg>
           </nuxt-link>
-          <button class="md:hidden p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600" @click="toggleMenu">
+          <button class="lg:hidden p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600" @click="toggleMenu">
             <svg class="w-5 h-5 text-gray-300 group-hover:text-gray-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path clip-rule="evenodd" fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
             </svg>
           </button>
           <div class="flex items-center justify-end w-full">
-            <button v-if="step.test" class="hidden md:block p-2.5 group rounded-full hover:bg-gray-100 mr-1 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600" @click="toggleMenu">
+            <button v-if="step.test" class="hidden lg:block p-2.5 group rounded-full hover:bg-gray-100 mr-1 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-600 hover:bg-gray-600" @click="toggleMenu">
               <svg class="w-5 h-5 text-gray-300 group-hover:text-gray-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
               </svg>
@@ -201,12 +201,12 @@ const goNextStep = async () => {
       </div>
     </div>
 
-    <div v-if="menu" class="absolute right-0 bottom-24 md:right-8 z-10 bg-[#272822] overflow-auto" style="height: calc(100vh - 96px)">
+    <div v-if="menu" class="absolute right-0 bottom-24 w-1/4 lg:right-8 z-10 overflow-auto" style="height: calc(100vh - 96px)">
       <step-menu :steps="steps" :step="step" />
     </div>
 
-    <div class="md:flex">
-      <div :class="[step.test ? 'md:w-1/2 md:pr-8 md:pl-4' : 'w-full md:w-3/4 px-4 md:px-40']">
+    <div class="lg:flex">
+      <div :class="[step.test ? 'lg:w-1/2 px-4 lg:px-8' : 'w-full lg:w-3/4 px-4 lg:px-40']">
         <div class="nuxt-content">
           <h1>{{ step.title }}</h1>
         </div>
@@ -254,10 +254,10 @@ const goNextStep = async () => {
           </div>
         </div>
       </div>
-      <div v-if="!step.test" class="hidden md:block md:w-1/4 md:absolute right-0 top-0 bg-[#272822] h-screen overflow-auto" style="height: calc(100vh - 96px)">
+      <div v-if="!step.test" class="hidden lg:block lg:w-1/4 lg:absolute right-0 top-0 bg-[#272822] h-screen overflow-auto" style="height: calc(100vh - 96px)">
         <step-menu :steps="steps" :step="step" />
       </div>
-      <div v-if="step.test" class="md:w-1/2 md:absolute right-0 top-0 -mx-8 md:mx-0">
+      <div v-if="step.test" class="lg:w-1/2 lg:absolute right-0 top-0 mx-0">
         <code-editor
           :value="savedTest || test"
           :verify="verify"
