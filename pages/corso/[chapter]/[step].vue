@@ -227,7 +227,7 @@ const goNextStep = async () => {
           <div class="flex">
             <div v-if="hasErrorCode">
               <div v-for="(e, i) in errors" :key="i">
-                <span class="text-persian-green">computer:~$</span>
+                <span class="text-saffron">computer:~$</span>
                 <span class="flex-1 typing items-center pl-2">
                   {{ e.text }} (row: {{ e.row + 1 }}, col: {{ e.column + 1 }})
                 </span>
@@ -235,7 +235,7 @@ const goNextStep = async () => {
             </div>
             <template v-else-if="edited">
               <span v-if="verifyTest" class="flex items-center h-full w-full">
-                <span class="text-persian-green pr-2">computer:~$</span>
+                <span class="text-saffron pr-2">computer:~$</span>
                 <span>{{ verifyTest }}</span>
               </span>
               <div v-else class="flex items-center justify-center h-full w-full text-center">
