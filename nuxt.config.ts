@@ -4,6 +4,9 @@ const routes = globSync('./content/**/*.md')
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',

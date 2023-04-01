@@ -25,8 +25,8 @@ const goNextChapter = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-pink-600 text-white overflow-auto">
-    <div class="absolute bg-pink-600 w-full top-0 right-0 left-0">
+  <div class="font-mono h-screen bg-saffron text-black overflow-auto">
+    <div class="absolute bg-saffron w-full top-0 right-0 left-0">
       <div class="flex pl-4 md:pl-[40px] items-center h-[80px]">
         <nuxt-link to="/" class="flex items-center">
           <svg
@@ -47,8 +47,8 @@ const goNextChapter = async (step: any) => {
       <h1 class="text-3xl md:text-6xl pb-8">
         // Corso Javascript
       </h1>
-      <div class="w-full rounded-full h-2.5 bg-gray-700 mb-8">
-        <div class="h-2.5 rounded-full" :class="completed === 100 ? 'bg-green-500' : 'bg-white'" :style="`width: ${completed}%`" />
+      <div class="w-full rounded-full h-2.5 bg-sandy-brown mb-8">
+        <div class="h-2.5 rounded-full bg-burnt-sienna" :style="`width: ${completed}%`" />
       </div>
       <div v-for="(c, i) in chapters" :key="i" class="pb-8">
         <div

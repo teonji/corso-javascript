@@ -48,8 +48,8 @@ const goStep = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-purple-600 text-white overflow-auto">
-    <div class="absolute bg-purple-600 w-full top-0 right-0 left-0">
+  <div class="font-mono h-screen bg-sandy-brown text-black overflow-auto">
+    <div class="absolute bg-sandy-brown w-full top-0 right-0 left-0">
       <div class="flex px-4 md:pl-[40px] items-center justify-between h-[80px]">
         <nuxt-link to="/corso" class="flex items-center">
           <svg
@@ -65,8 +65,8 @@ const goStep = async (step: any) => {
           Corso
         </nuxt-link>
         <div class="md:hidden block flex items-center justify-between">
-          <div class="w-24 rounded-full h-2.5 bg-gray-700">
-            <div class="h-2.5 rounded-full" :class="testCompleted === 100 ? 'bg-green-500' : 'bg-white'" :style="`width: ${testCompleted}%`" />
+          <div class="w-24 rounded-full h-2.5 bg-saffron">
+            <div class="h-2.5 rounded-full" :class="testCompleted === 100 ? 'bg-persian-green' : 'bg-burnt-sienna'" :style="`width: ${testCompleted}%`" />
           </div>
           <small class="ml-2">Test</small>
         </div>
@@ -78,14 +78,14 @@ const goStep = async (step: any) => {
           <h1>// {{ chapter.title }}</h1>
           <div class="hidden md:flex items-center justify-between text-xl">
             <small class="mr-2">Test</small>
-            <div class="w-48 rounded-full h-2.5 bg-gray-700">
-              <div class="h-2.5 rounded-full" :class="testCompleted === 100 ? 'bg-green-500' : 'bg-white'" :style="`width: ${testCompleted}%`" />
+            <div class="w-48 rounded-full h-2.5 bg-saffron">
+              <div class="h-2.5 rounded-full bg-burnt-sienna" :style="`width: ${testCompleted}%`" />
             </div>
           </div>
         </div>
       </div>
-      <div class="w-full rounded-full h-2.5 bg-gray-700 mb-8">
-        <div class="h-2.5 rounded-full" :class="completed === 100 ? 'bg-green-500' : 'bg-white'" :style="`width: ${completed}%`" />
+      <div class="w-full rounded-full h-2.5 bg-saffron mb-8">
+        <div class="h-2.5 rounded-full bg-burnt-sienna" :style="`width: ${completed}%`" />
       </div>
       <div v-for="(s, i) in steps" :key="i" class="pb-8">
         <div

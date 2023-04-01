@@ -133,11 +133,11 @@ const goNextStep = async () => {
 </script>
 
 <template>
-  <div class="font-mono text-xl w-full h-screen text-white pb-24 overflow-auto" :class="[step.test ? 'bg-[#2F3129]' : 'bg-indigo-600']">
-    <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 border-t border-gray-200 lg:grid-cols-3 bg-gray-700 border-gray-600">
+  <div class="font-mono text-xl w-full h-screen pb-24 overflow-auto" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
+    <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 lg:grid-cols-3 bg-charcoal">
       <div class="fixed items-center justify-between space-x-2 w-full">
-        <div class="w-full bg-gray-200 rounded-full h-1.5 bg-gray-800">
-          <div class="h-1.5 rounded-full" :class="stepPercentage === 100 ? 'bg-green-600' : 'bg-blue-600'" :style="`width: ${stepPercentage}%`" />
+        <div class="w-full bg-gray-200 rounded-full h-1.5 bg-saffron">
+          <div class="h-1.5 rounded-full bg-burnt-sienna" :style="`width: ${stepPercentage}%`" />
         </div>
       </div>
       <div class="px-8 items-center justify-center hidden mr-auto text-gray-300 lg:flex">
@@ -176,8 +176,8 @@ const goNextStep = async () => {
             </nuxt-link>
             <button
               :disabled="step.test && !unlock"
-              :class="[!step.test ? 'cursor-pointer bg-blue-600 hover:bg-blue-700' : `text-gray-300 ${unlock ? 'bg-green-600 hover:bg-green-700 cursor-pointer' : 'cursor-not-allowed bg-red-600 hover:bg-red-700'}`]"
-              class="inline-flex items-center justify-center p-2.5 mx-2 font-medium rounded-full group focus:ring-4 focus:ring-blue-300 focus:outline-none focus:ring-blue-800"
+              :class="[!step.test ? 'cursor-pointer bg-persian-green hover:bg-saffron' : `text-gray-300 ${unlock ? 'bg-persian-green hover:bg-saffron cursor-pointer' : 'cursor-not-allowed bg-burnt-sienna hover:bg-sandy-brown'}`]"
+              class="inline-flex items-center justify-center p-2.5 mx-2 font-medium rounded-full group focus:ring-4 focus:ring-persian-green focus:outline-none focus:ring-saffron"
               @click="goNextStep()"
             >
               <svg v-if="!step.test" class="w-5 h-5 text-white text-gray-300 group-hover:text-gray-900 group-hover:text-white" fill="currentColor" viewBox="0 0 320 512" aria-hidden="true">
@@ -200,13 +200,13 @@ const goNextStep = async () => {
         </div>
       </div>
     </div>
-    <div v-if="menu" class="absolute right-0 bottom-24 w-full lg:w-1/4 lg:right-8 bg-[#272822] z-10 overflow-auto" style="height: calc(100vh - 96px)">
+    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/4 bg-272822 z-10 overflow-auto" style="height: calc(100vh - 96px)">
       <step-menu :steps="steps" :step="step" />
     </div>
 
     <div class="lg:flex">
-      <div :class="[step.test ? 'lg:w-1/2 px-4 lg:px-8' : 'w-full lg:w-3/4 px-4 lg:px-40']">
-        <div class="nuxt-content">
+      <div class="w-full lg:w-3/4 px-4 lg:px-40">
+        <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
         </div>
         <content-renderer
@@ -218,16 +218,16 @@ const goNextStep = async () => {
           v-if="step.test"
           class="p-4 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased rounded-lg leading-normal overflow-hidden"
           :class="{
-          'bg-red-500': hasErrorCode,
-          'bg-red-500': !hasErrorCode && (edited && verifyTest),
-          'bg-[#272822]': !hasErrorCode && !edited,
-          'bg-green-700': edited && !verifyTest
+          'bg-burnt-sienna': hasErrorCode,
+          'bg-burnt-sienna': !hasErrorCode && (edited && verifyTest),
+          'bg-charcoal': !hasErrorCode && !edited,
+          'bg-persian-green': edited && !verifyTest
           }"
         >
           <div class="flex">
             <div v-if="hasErrorCode">
               <div v-for="(e, i) in errors" :key="i">
-                <span class="text-green-400">computer:~$</span>
+                <span class="text-persian-green">computer:~$</span>
                 <span class="flex-1 typing items-center pl-2">
                   {{ e.text }} (row: {{ e.row + 1 }}, col: {{ e.column + 1 }})
                 </span>
@@ -235,7 +235,7 @@ const goNextStep = async () => {
             </div>
             <template v-else-if="edited">
               <span v-if="verifyTest" class="flex items-center h-full w-full">
-                <span class="text-green-400 pr-2">computer:~$</span>
+                <span class="text-persian-green pr-2">computer:~$</span>
                 <span>{{ verifyTest }}</span>
               </span>
               <div v-else class="flex items-center justify-center h-full w-full text-center">
@@ -245,7 +245,7 @@ const goNextStep = async () => {
               </div>
             </template>
             <div v-else class="flex items-center justify-center h-full w-full">
-              <span class="text-green-400">computer:~$</span>
+              <span class="text-saffron">computer:~$</span>
               <span class="flex-1 typing items-center pl-2">
                 Inizia a scrivere
               </span>
@@ -253,10 +253,10 @@ const goNextStep = async () => {
           </div>
         </div>
       </div>
-      <div v-if="!step.test" class="hidden lg:block lg:w-1/4 lg:absolute right-0 top-0 bg-[#272822] h-screen overflow-auto" style="height: calc(100vh - 96px)">
+      <div v-if="!step.test" class="hidden lg:block lg:w-1/4 lg:absolute right-0 top-0 bg-charcoal h-screen overflow-auto" style="height: calc(100vh - 96px)">
         <step-menu :steps="steps" :step="step" />
       </div>
-      <div v-if="step.test" class="lg:w-1/2 lg:absolute right-0 top-0 mx-0">
+      <div v-if="step.test" class="lg:w-1/4 lg:absolute right-0 top-0 mx-0">
         <code-editor
           :value="savedTest || test"
           :verify="verify"

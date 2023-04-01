@@ -21,7 +21,7 @@ onMounted(async () => {
     <li v-for="(s, i) in steps" :key="`menu-${i}`" class="m-8">
       <span
         class="absolute flex items-center justify-center w-6 h-6 rounded-full left-5 ring-2"
-        :class="steps[i === 0 ? 0 : i].path === step.path ? 'ring-yellow-500 bg-yellow-500 text-[#272822]' : (!isLearnt(steps[i === 0 ? 0 : i - 1].path) ? 'ring-gray-400 bg-gray-400 text-[#272822]' : 'ring-white bg-white text-indigo-500')"
+        :class="steps[i === 0 ? 0 : i].path === step.path ? 'ring-sandy-brown bg-saffron text-charcoal' : (!isLearnt(steps[i === 0 ? 0 : i - 1].path) ? 'ring-gray-400 bg-gray-400 text-charcoal' : 'ring-white bg-white text-charcoal')"
       >
         <svg
           v-if="s.test"
@@ -40,7 +40,7 @@ onMounted(async () => {
           <span>
             {{ s.title }}
           </span>
-          <span v-if="i === latest" class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-blue-900 text-blue-300 ml-3">Latest</span>
+          <span v-if="i === latest" class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-saffron text-charcoal ml-3">Latest</span>
         </h3>
         <p v-if="isLearnt(steps[i === 0 ? 0 : i - 1].path)" class="mb-4 text-base font-normal" :class="isLearnt(steps[i === 0 ? 0 : i - 1].path) ? 'text-gray-200' : 'text-gray-400'">
           {{ s.description }}

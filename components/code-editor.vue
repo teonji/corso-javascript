@@ -71,7 +71,7 @@ const toggleHelp = async () => {
 
 <template>
   <div class="h-screen flex flex-col mt-8 lg:mt-0">
-    <button v-if="showRun" class="absolute right-4 bottom-28 z-20 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" @click="run">
+    <button v-if="showRun" class="absolute right-4 bottom-28 z-20 text-charcoal bg-saffron hover:bg-sandy-brown focus:ring-4 focus:ring-sandy-brown font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" @click="run">
       Run
       <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />

@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.page-enter-active,
+ .page-leave-active {
+  transition: opacity 0.2s ease-in-out;
+ }
+.page-enter-from,
+.page-leave-to {
+  opacity: 0.8;
+}
+
+.ace_editor {
+  @apply font-mono;
+  font-size: 14.45px;
+}
+.ace_type {
+  font-style: inherit!important;
+}
+.ace_content {
+  @apply bg-charcoal;
+}
+.ace_gutter > div {
+  @apply bg-charcoal;
+  opacity: 0.7;
+}
+.ace_active-line {
+  background-color: theme('colors.charcoal')!important;
+  filter: brightness(85%)
+}
+
 .content-renderer,
 .nuxt-content {
   @apply md:text-xl;
@@ -9,19 +37,22 @@
     @apply my-4 md:my-8;
   }
   h1 {
-    @apply text-3xl md:text-6xl
+    @apply text-charcoal
+    text-3xl md:text-6xl
     my-4 md:my-8;
   }
   h2 {
-    @apply text-2xl md:text-5xl
+    @apply text-charcoal
+    text-2xl md:text-5xl
     my-4 md:my-8;
   }
   h3 {
-    @apply text-xl md:text-4xl
+    @apply text-charcoal
+    text-xl md:text-4xl
     my-4 md:my-8;
   }
   h4 {
-    @apply text-lg md:text-2xl
+    @apply text-charcoal text-lg md:text-2xl
     my-4 md:my-8;
   }
 
@@ -38,21 +69,20 @@
     padding-left: 2em;
   }
   code {
-    //padding: 0.2em 0.4em;
+    @apply bg-saffron text-charcoal;
     margin: 0;
     font-size: 85%;
     white-space: break-spaces;
-    background-color: rgba(129, 115, 110, 0.4);
     border-radius: 6px;
     padding: 4px;
   }
   pre {
+    @apply bg-charcoal;
     margin: 16px 0;
     padding: 16px;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #272822;
     border-radius: 6px;
     code {
       background-color: transparent;
