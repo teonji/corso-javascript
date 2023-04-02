@@ -48,7 +48,7 @@ const goStep = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-sandy-brown text-black overflow-auto">
+  <div class="font-mono h-screen bg-sandy-brown text-charcoal overflow-auto">
     <div class="absolute bg-sandy-brown w-full top-0 right-0 left-0">
       <div class="flex px-4 md:pl-[40px] items-center justify-between h-[80px]">
         <nuxt-link to="/corso" class="flex items-center">
@@ -72,10 +72,10 @@ const goStep = async (step: any) => {
         </div>
       </div>
     </div>
-    <div class="container p-4 pt-24 md:p-32 m-auto">
+    <div class="container p-4 pt-24 md:p-32 m-auto h-screen">
       <div class="pb-8">
         <div v-if="chapter" class="text-3xl md:text-6xl font-bold flex items-center justify-between">
-          <h1>// {{ chapter.title }}</h1>
+          <h1 class="font-extrabold">// {{ chapter.title }}</h1>
           <div class="hidden md:flex items-center justify-between text-xl">
             <small class="mr-2">Test</small>
             <div class="w-48 rounded-full h-2.5 bg-saffron">
@@ -92,7 +92,7 @@ const goStep = async (step: any) => {
           :class="isStepEnabled(steps, s) ? 'cursor-pointer' : 'cursor-not-allowed opacity-30'"
           @click="goStep(s)"
         >
-          <div class="md:text-xl text-lg font-bold flex items-center">
+          <div class="md:text-2xl text-lg font-bold flex items-center">
             <span>//  {{ i + 1 }} - {{ s.title }}</span>
             <svg
               v-if="s.test"

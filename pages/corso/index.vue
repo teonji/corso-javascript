@@ -25,7 +25,7 @@ const goNextChapter = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-saffron text-black overflow-auto">
+  <div class="font-mono h-screen bg-saffron text-charcoal overflow-auto">
     <div class="absolute bg-saffron w-full top-0 right-0 left-0">
       <div class="flex pl-4 md:pl-[40px] items-center h-[80px]">
         <nuxt-link to="/" class="flex items-center">
@@ -44,7 +44,7 @@ const goNextChapter = async (step: any) => {
       </div>
     </div>
     <div class="container p-4 pt-24 md:p-32 m-auto">
-      <h1 class="text-3xl md:text-6xl pb-8">
+      <h1 class="text-3xl font-bold font-extrabold md:text-6xl pb-8">
         // Corso Javascript
       </h1>
       <div class="w-full rounded-full h-2.5 bg-sandy-brown mb-8">
@@ -55,7 +55,7 @@ const goNextChapter = async (step: any) => {
             :class="[isChapterEnabled(c) ? 'cursor-pointer' : 'cursor-not-allowed opacity-30']"
             @click="goNextChapter(c)"
         >
-          <h2 class="md:text-xl text-lg font-bold">
+          <h2 class="md:text-2xl text-lg font-bold">
             // {{ i + 1 }} - {{ c.title }}
           </h2>
           <p class="text-sm md:text-base">
