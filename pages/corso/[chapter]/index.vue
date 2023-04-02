@@ -48,7 +48,7 @@ const goStep = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-sandy-brown text-charcoal overflow-auto">
+  <div class="font-mono h-screen bg-sandy-brown text-charcoal overflow-hidden">
     <div class="absolute bg-sandy-brown w-full top-0 right-0 left-0">
       <div class="flex px-4 md:pl-[40px] items-center justify-between h-[80px]">
         <nuxt-link to="/corso" class="flex items-center">
@@ -72,7 +72,7 @@ const goStep = async (step: any) => {
         </div>
       </div>
     </div>
-    <div class="container p-4 pt-24 md:p-32 m-auto h-screen">
+    <div class="container p-4 pt-24 md:p-32 m-auto h-screen overflow-auto">
       <div class="pb-8">
         <div v-if="chapter" class="text-3xl md:text-6xl font-bold flex items-center justify-between">
           <h1 class="font-extrabold">// {{ chapter.title }}</h1>

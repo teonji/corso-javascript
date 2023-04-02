@@ -25,7 +25,7 @@ const goNextChapter = async (step: any) => {
 </script>
 
 <template>
-  <div class="font-mono h-screen bg-saffron text-charcoal overflow-auto">
+  <div class="font-mono h-screen bg-saffron text-charcoal overflow-hidden">
     <div class="absolute bg-saffron w-full top-0 right-0 left-0">
       <div class="flex pl-4 md:pl-[40px] items-center h-[80px]">
         <nuxt-link to="/" class="flex items-center">
@@ -43,7 +43,7 @@ const goNextChapter = async (step: any) => {
         </nuxt-link>
       </div>
     </div>
-    <div class="container p-4 pt-24 md:p-32 m-auto">
+    <div class="container p-4 pt-24 md:p-32 m-auto h-screen overflow-auto">
       <h1 class="text-3xl font-bold font-extrabold md:text-6xl pb-8">
         // Corso Javascript
       </h1>
