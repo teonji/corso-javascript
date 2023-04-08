@@ -48,9 +48,9 @@ const goStep = async (step: any) => {
 </script>
 
 <template>
-  <div class="bg-sandy-brown text-charcoal h-screen overflow-auto">
+  <div class="bg-sandy-brown text-charcoal h-screen overflow-hidden">
     <div class="fixed bg-sandy-brown w-full top-0 h-24">
-      <div class="h-full container mx-auto px-4 md:px-48 flex">
+      <div class="h-full container mx-auto px-4 lg:px-48 md:px-12 flex">
         <nuxt-link to="/corso" class="flex items-center items-center">
           <svg
             class="w-8 h-8 mr-2"
@@ -72,7 +72,7 @@ const goStep = async (step: any) => {
         </div>
       </div>
     </div>
-    <div class="h-full container mx-auto px-4 md:px-48 pt-24">
+    <div class="overflow-auto h-full container mx-auto px-4 lg:px-48 md:px-12 pt-24">
       <div class="pb-8">
         <div v-if="chapter" class="text-3xl md:text-6xl font-bold flex items-center justify-between">
           <h1 class="font-extrabold">// {{ chapter.title }}</h1>
