@@ -210,10 +210,10 @@ useHead({
         </div>
       </div>
     </div>
-    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/4 bg-272822 z-10 overflow-auto" style="height: calc(100vh - 96px)">
+    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/4 bg-272822 z-10 pt-12 overflow-auto" style="height: calc(100vh - 96px)">
       <step-menu :steps="steps" :step="step" />
     </div>
-    <div v-if="!menu" class="lg:flex">
+    <div class="lg:flex" :class="{'hidden lg:flex': menu}">
       <div class="w-full lg:w-3/4 px-4 lg:px-40">
         <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
