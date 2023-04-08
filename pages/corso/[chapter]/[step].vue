@@ -130,10 +130,15 @@ const goNextStep = async () => {
     await router.push(`/corso${nextStep?.path}`)
   }
 }
+useHead({
+  bodyAttrs: {
+    class: step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white'
+  }
+})
 </script>
 
 <template>
-  <div class="font-mono text-xl w-full h-screen pb-24 overflow-auto" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
+  <div class="font-mono text-xl w-full h-full pb-24 overflow-auto" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
     <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 lg:grid-cols-3 bg-charcoal">
       <div class="fixed items-center justify-between space-x-2 w-full">
         <div class="w-full bg-gray-200 rounded-full h-1.5 bg-saffron">
@@ -253,7 +258,7 @@ const goNextStep = async () => {
           </div>
         </div>
       </div>
-      <div v-if="!step.test" class="hidden lg:block lg:w-1/4 lg:absolute right-0 top-0 bg-charcoal h-screen overflow-auto" style="height: calc(100vh - 96px)">
+      <div v-if="!step.test" class="hidden lg:block lg:w-1/4 lg:absolute right-0 top-0 bg-charcoal h-full overflow-auto" style="height: calc(100vh - 96px)">
         <step-menu :steps="steps" :step="step" />
       </div>
       <div v-if="step.test" class="lg:w-1/4 lg:absolute right-0 top-0 mx-0">
