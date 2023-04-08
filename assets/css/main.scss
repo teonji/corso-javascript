@@ -36,7 +36,7 @@ body {
 
 .content-renderer,
 .nuxt-content {
-  @apply md:text-xl;
+  @apply text-base md:text-xl;
   p {
     @apply my-4 md:my-8;
   }
