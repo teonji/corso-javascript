@@ -210,7 +210,7 @@ useHead({
         </div>
       </div>
     </div>
-    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/4 bg-272822 z-10 pt-12 overflow-auto" style="height: calc(100vh - 96px)">
+    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/4 bg-272822 z-10 pt-24 overflow-auto" style="height: calc(100vh - 96px)">
       <step-menu :steps="steps" :step="step" />
     </div>
     <div class="lg:flex" :class="{'hidden lg:flex': menu}">
