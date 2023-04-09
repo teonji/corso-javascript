@@ -135,8 +135,8 @@ const goNextStep = async () => {
 </script>
 
 <template>
-  <div class="text-xl w-full md:h-screen pb-24" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
-    <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 lg:grid-cols-3 bg-charcoal">
+  <div class="text-xl md:h-screen pb-24" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
+    <div class="fixed bottom-0 left-0 z-50 grid w-full h-20 md:h-24 grid-cols-1 lg:grid-cols-3 bg-charcoal">
       <div class="fixed items-center justify-between space-x-2 w-full">
         <div class="w-full bg-gray-200 rounded-full h-1.5 bg-saffron">
           <div class="h-1.5 rounded-full bg-burnt-sienna" :style="`width: ${stepPercentage}%`" />
@@ -206,11 +206,11 @@ const goNextStep = async () => {
         </div>
       </div>
     </div>
-    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-24 w-full lg:w-1/3 z-10 pt-24 md:pt-4 overflow-auto" style="height: calc(100vh - 96px)">
+    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-20 md:bottom-24 w-full lg:w-1/3 z-10 pt-24 md:pt-4 overflow-auto" style="height: calc(100vh - 5rem)">
       <step-menu :steps="steps" :step="step" />
     </div>
-    <div class="lg:flex" :class="{'hidden lg:flex': menu}">
-      <div class="w-full md:h-screen overflow-auto lg:w-2/3 px-4 lg:px-28" style="height: calc(100vh - 96px)">
+    <div class="lg:flex" :class="{ hidden: menu }">
+      <div class="w-full h-screen overflow-hidden lg:w-2/3 px-4 lg:px-28">
         <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
         </div>
@@ -258,7 +258,7 @@ const goNextStep = async () => {
           </div>
         </div>
       </div>
-      <div v-if="!step.test" class="hidden lg:block lg:w-1/3 lg:absolute right-0 top-0 bg-charcoal h-full md:h-screen overflow-auto" style="height: calc(100vh - 96px)">
+      <div v-if="!step.test" class="hidden lg:block lg:w-1/3 lg:absolute right-0 top-0 bg-charcoal h-full md:h-screen overflow-auto">
         <step-menu :steps="steps" :step="step" />
       </div>
       <div v-if="step.test" class="lg:w-1/3 lg:absolute right-0 top-0 mx-0">
