@@ -4,11 +4,11 @@ import { useCourse } from '~/composables/course'
 import useApi from "~/composables/api"
 const router = useRouter()
 
-useHead({
-  bodyAttrs: {
-    class: 'bg-saffron'
-  }
-})
+// useHead({
+//   bodyAttrs: {
+//     class: 'bg-saffron'
+//   }
+// })
 
 const {
   chapters,
@@ -31,7 +31,7 @@ const goNextChapter = async (step: any) => {
 </script>
 
 <template>
-  <div class="bg-saffron text-charcoal">
+  <div class="bg-saffron md:h-screen text-charcoal">
     <div class="fixed bg-saffron w-full top-0 h-24">
       <div class="h-full container mx-auto px-4 lg:px-48 md:px-12 flex">
         <nuxt-link to="/" class="flex items-center items-center">

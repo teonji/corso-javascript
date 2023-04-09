@@ -7,11 +7,11 @@ const route = useRoute()
 const router = useRouter()
 import useApi from '~/composables/api'
 
-useHead({
-  bodyAttrs: {
-    class: 'bg-sandy-brown'
-  }
-})
+// useHead({
+//   bodyAttrs: {
+//     class: 'bg-sandy-brown'
+//   }
+// })
 
 onMounted(() => {
   learnt.value = useApi.getLearnt()
@@ -54,7 +54,7 @@ const goStep = async (step: any) => {
 </script>
 
 <template>
-  <div class="bg-sandy-brown text-charcoal">
+  <div class="bg-sandy-brown md:h-screen text-charcoal">
     <div class="fixed bg-sandy-brown w-full top-0 h-24">
       <div class="h-full container mx-auto px-4 lg:px-48 md:px-12 flex justify-between">
         <nuxt-link to="/corso" class="flex items-center items-center">

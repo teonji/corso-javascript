@@ -114,13 +114,10 @@ const goNextStep = async () => {
   if (unlock.value) {
     await setLearnt()
     if (next) {
-      debugger
       await router.push(`/corso${next.path}`)
     } else {
-      debugger
       await router.push('/corso/fine')
     }
-    debugger
     await useApi.setTest({
       path: step.path.substr(1),
       content: content.value
@@ -130,15 +127,15 @@ const goNextStep = async () => {
     await router.push(`/corso${nextStep?.path}`)
   }
 }
-useHead({
-  bodyAttrs: {
-    class: step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white'
-  }
-})
+// useHead({
+//   bodyAttrs: {
+//     class: step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white'
+//   }
+// })
 </script>
 
 <template>
-  <div class="text-xl w-full h-full md:h-screen overflow-hidden pb-24" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
+  <div class="text-xl w-full md:h-screen pb-24" :class="[step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white']">
     <div class="fixed bottom-0 left-0 z-50 grid w-full h-24 grid-cols-1 lg:grid-cols-3 bg-charcoal">
       <div class="fixed items-center justify-between space-x-2 w-full">
         <div class="w-full bg-gray-200 rounded-full h-1.5 bg-saffron">
@@ -213,7 +210,7 @@ useHead({
       <step-menu :steps="steps" :step="step" />
     </div>
     <div class="lg:flex" :class="{'hidden lg:flex': menu}">
-      <div class="w-full h-full md:h-screen overflow-auto lg:w-2/3 px-4 lg:px-28" style="height: calc(100vh - 96px)">
+      <div class="w-full md:h-screen overflow-auto lg:w-2/3 px-4 lg:px-28" style="height: calc(100vh - 96px)">
         <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
         </div>
