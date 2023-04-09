@@ -127,11 +127,6 @@ const goNextStep = async () => {
     await router.push(`/corso${nextStep?.path}`)
   }
 }
-// useHead({
-//   bodyAttrs: {
-//     class: step.test ? 'bg-sandy-brown text-black' : 'bg-persian-green text-white'
-//   }
-// })
 </script>
 
 <template>
@@ -210,7 +205,7 @@ const goNextStep = async () => {
       <step-menu :steps="steps" :step="step" />
     </div>
     <div class="lg:flex" :class="{ hidden: menu }">
-      <div class="w-full h-screen overflow-hidden lg:w-2/3 px-4 lg:px-28">
+      <div class="w-full h-screen overflow-auto lg:w-2/3 px-4 lg:px-28">
         <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
         </div>

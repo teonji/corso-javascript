@@ -7,12 +7,6 @@ const route = useRoute()
 const router = useRouter()
 import useApi from '~/composables/api'
 
-// useHead({
-//   bodyAttrs: {
-//     class: 'bg-sandy-brown'
-//   }
-// })
-
 onMounted(() => {
   learnt.value = useApi.getLearnt()
 
@@ -56,7 +50,7 @@ const goStep = async (step: any) => {
 <template>
   <div class="bg-sandy-brown md:h-screen text-charcoal">
     <div class="fixed bg-sandy-brown w-full top-0 h-24">
-      <div class="h-full container mx-auto px-4 lg:px-48 md:px-12 flex justify-between">
+      <div class="h-full mx-auto px-4 lg:px-48 md:px-12 flex justify-between">
         <nuxt-link to="/corso" class="flex items-center items-center">
           <svg
             class="w-8 h-8 mr-2"
@@ -78,7 +72,7 @@ const goStep = async (step: any) => {
         </div>
       </div>
     </div>
-    <div class="h-full container mx-auto px-4 lg:px-48 md:px-12 pt-24">
+    <div class="h-full mx-auto px-4 lg:px-48 md:px-12 pt-24 overflow-auto">
       <div class="pb-8">
         <div v-if="chapter" class="text-3xl md:text-6xl font-bold flex items-center justify-between">
           <h1 class="font-extrabold">// {{ chapter.title }}</h1>
