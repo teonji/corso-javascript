@@ -12,7 +12,7 @@ const chapters = await useApi.getChapters()
             Corso di
             <span class="text-saffron">Javascript</span> online in Italiano
           </h1>
-          <p class="max-w-2xl mb-6 font-light text-charcoal lg:mb-8 md:text-lg lg:text-xl">
+          <p class="max-w-2xl mb-6 text-charcoal font-bold lg:mb-8 md:text-lg lg:text-xl">
             Diventa uno sviluppatore JavaScript in pochi passi con questo corso base online!
           </p>
           <nuxt-link to="/corso" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-charcoal rounded-lg bg-sandy-brown hover:bg-burnt-sienna focus:ring-4 focus:ring-burnt-sienna">
@@ -78,7 +78,7 @@ const chapters = await useApi.getChapters()
           <h2 class="mb-4 font-extrabold leading-tight text-saffron text-8xl">
             GRATIS
           </h2>
-          <p class="mb-6 font-light text-white md:text-lg">
+          <p class="mb-6 text-white font-bold md:text-lg">
             Nessuna carta di credito richiesta.
           </p>
           <nuxt-link to="/corso" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-charcoal rounded-lg bg-sandy-brown hover:bg-burnt-sienna focus:ring-4 focus:ring-burnt-sienna">
