@@ -201,11 +201,11 @@ const goNextStep = async () => {
         </div>
       </div>
     </div>
-    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-20 md:bottom-24 w-full lg:w-1/3 z-10 pt-24 md:pt-4 overflow-auto" style="height: calc(100vh - 5rem)">
+    <div v-if="menu" class="bg-charcoal absolute right-0 bottom-20 md:bottom-24 w-full lg:w-1/3 z-10 pt-24 md:pt-4 overflow-auto height-content">
       <step-menu :steps="steps" :step="step" />
     </div>
     <div class="lg:flex" :class="{ hidden: menu }">
-      <div class="w-full h-screen overflow-auto lg:w-2/3 px-4 lg:px-28">
+      <div class="w-full height-content overflow-auto lg:w-2/3 px-4 lg:px-28">
         <div class="nuxt-content text-charcoal font-extrabold">
           <h1>{{ step.title }}</h1>
         </div>
@@ -253,7 +253,7 @@ const goNextStep = async () => {
           </div>
         </div>
       </div>
-      <div v-if="!step.test" class="hidden lg:block lg:w-1/3 lg:absolute right-0 top-0 bg-charcoal h-full md:h-screen overflow-auto">
+      <div v-if="!step.test" class="hidden lg:block lg:w-1/3 lg:absolute right-0 top-0 bg-charcoal overflow-auto height-content">
         <step-menu :steps="steps" :step="step" />
       </div>
       <div v-if="step.test" class="lg:w-1/3 lg:absolute right-0 top-0 mx-0">
@@ -268,3 +268,12 @@ const goNextStep = async () => {
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+  .height-content {
+    @apply h-full;
+    @media (min-width: 768px) {
+      height: calc(100vh - 6rem);
+    }
+  }
+</style>
